@@ -33,11 +33,16 @@ test:
     - cad_to_dagmc
   commands:
     - pip check
+    - pytest tests
   requires:
     - pip
+    - pytest
+  source_files:
+    - tests
 
 about:
-  summary: Converts CAD files to a DAGMC h5m file
+    home: https://github.com/fusion-energy/cad_to_dagmc
+  summary: Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files
   license: MIT
   license_file: LICENSE
 
