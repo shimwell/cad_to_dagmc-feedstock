@@ -45,11 +45,12 @@ test:
 
 about:
   home: https://github.com/fusion-energy/cad_to_dagmc
-  summary: Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files
+  summary: 'Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files'
   description: |
     Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files
   license: MIT
   license_family: MIT
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
