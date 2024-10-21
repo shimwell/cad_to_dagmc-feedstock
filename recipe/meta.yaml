@@ -16,7 +16,7 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.10
     - setuptools >=65.4.0
     - setuptools-scm >=7.0.5
     - pip
@@ -34,20 +34,22 @@ requirements:
 test:
   imports:
     - cad_to_dagmc
-  commands:
-    - pip check
-    - pytest tests
   requires:
     - pip
     - pytest
   source_files:
     - tests
+  commands:
+    - pip check
+    - pytest tests
 
 about:
-  summary: Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files
   home: https://github.com/fusion-energy/cad_to_dagmc
+  summary: Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files
+  description: |
+    Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files
   license: MIT
-  license_file: LICENSE
+  license_family: MIT
 
 extra:
   recipe-maintainers:
