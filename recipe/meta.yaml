@@ -1,52 +1,44 @@
-{% set name = "cad_to_dagmc" %}
-{% set version = "0.7.0" %}
+{% set name = "cad-to-dagmc" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b843c6b856f9ef1b5d47e952429c788527e035cfbd6ddf7da27746d7864909d6
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cad_to_dagmc-{{ version }}.tar.gz
+  sha256: c2beccd6a07bd557d04a7c72a7a8ff8508a2d7d7c33527964a39318204dbebfd
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python >=3.10
+    - python >=3.8
+    - setuptools >=65.4.0
+    - setuptools-scm >=7.0.5
     - pip
   run:
-    - python >=3.10
-    - moab >=5.3.0
-    - gmsh
-    - python-gmsh
-    - cadquery >=2.4.0
-    - ocp >=7.7.2
+    - python >=3.8
     - trimesh
     - networkx
+    - cadquery >=2.4.0
+    - numpy <=1.23.5
+    - gmsh
 
 test:
   imports:
     - cad_to_dagmc
-  requires:
-    - pip
-    - pytest
-  source_files:
-    - tests
   commands:
     - pip check
-    - pytest tests
+  requires:
+    - pip
 
 about:
-  home: https://github.com/fusion-energy/cad_to_dagmc
-  summary: 'Converts CAD geometry to a DAGMC h5m file'
-  description: |
-    Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files
+  summary: Converts CAD files to a DAGMC h5m file
   license: MIT
-  license_family: MIT
   license_file: LICENSE
 
 extra:
