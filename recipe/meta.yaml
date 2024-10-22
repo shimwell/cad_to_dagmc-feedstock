@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
@@ -45,7 +45,7 @@ test:
 
 about:
   home: https://github.com/fusion-energy/cad_to_dagmc
-  summary: 'Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files'
+  summary: 'Converts CAD geometry to a DAGMC h5m file'
   description: |
     Convert CAD geometry (STP files) or CadQuery assemblies to DAGMC h5m files
   license: MIT
