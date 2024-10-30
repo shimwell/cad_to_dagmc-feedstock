@@ -20,6 +20,8 @@ requirements:
     - setuptools >=65.4.0
     - setuptools-scm >=7.0.5
     - pip
+    - gmsh
+    - python-gmsh
   run:
     - python >=3.10
     - moab >=5.3.0
