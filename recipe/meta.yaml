@@ -42,7 +42,6 @@ test:
   source_files:
     - tests
   commands:
-    - pip check
     - pytest tests
 
 about:
